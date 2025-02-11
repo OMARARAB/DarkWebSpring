@@ -26,7 +26,7 @@ public class AICoreService {
      */
     public List<SearchResult> performDeepSearch(String query) {
         // Flask API URL
-        String flaskApiUrl = "https://schedule-defense-australia-buy.trycloudflare.com/ai/scrape"; // Replace with your Flask API URL
+        String flaskApiUrl = "http://127.0.0.1:5000/ai/scrape"; // Replace with your Flask API URL
 
         // Create the JSON request body with the 'query'
         String jsonBody = "{\"query\": \"" + query + "\"}";
