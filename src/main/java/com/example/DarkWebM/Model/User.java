@@ -1,6 +1,7 @@
 package com.example.DarkWebM.Model;
 
 // Import necessary classes from Jakarta Persistence and Lombok libraries
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -34,6 +35,9 @@ public class User implements UserDetails {
 
     @Column(nullable = false, name = "password") // Defines a column with a not-null constraint
     private String password; // Password for the user, cannot be null
+
+    @Column(nullable = true, name = "phone")
+    private String phone;
 
     @Column(nullable = false, name = "role") // Defines a column with a not-null constraint
     @Enumerated(EnumType.STRING) // Indicates that the enum will be stored as a string in the database

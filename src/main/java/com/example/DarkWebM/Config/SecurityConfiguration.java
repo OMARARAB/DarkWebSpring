@@ -23,7 +23,10 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**").permitAll()  // Public endpoints
+                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/leaks/**").authenticated()
+                        .requestMatchers("/api/ai/**").authenticated()
+                        .requestMatchers("/api/ahmia/**").authenticated()
                         .anyRequest().authenticated()                   // Secure all other endpoints
                 )
                 .sessionManagement(session -> session

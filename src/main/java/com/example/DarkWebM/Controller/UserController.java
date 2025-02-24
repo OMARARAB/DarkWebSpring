@@ -1,4 +1,4 @@
-package com.example.DarkWebM.Controller;
+/*package com.example.DarkWebM.Controller;
 
 // Import necessary classes
 import com.example.DarkWebM.Model.User;
@@ -60,3 +60,4 @@ public class UserController {
         return ResponseEntity.noContent().build(); // Return 204 No Content status indicating successful deletion
     }
 }
+*/

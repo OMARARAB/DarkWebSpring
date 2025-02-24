@@ -1,6 +1,6 @@
 package com.example.DarkWebM.Controller;
 
-import com.example.DarkWebM.Service.AICoreService;
+import com.example.DarkWebM.Service.AISerachService;
 import com.example.DarkWebM.Model.SearchResult; // Import your custom SearchResult class
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import java.util.Map;
 public class AICoreController {
 
     @Autowired
-    private AICoreService aiCoreService;  // Assuming you have an AI service to perform deep search
+    private AISerachService aiSerachService;  // Assuming you have an AI service to perform deep search
 
     @PostMapping("/scrape")
     public ResponseEntity<?> scrape(@RequestBody Map<String, String> request) {
@@ -28,7 +28,7 @@ public class AICoreController {
             // Log the incoming request
             System.out.println("Received query: " + query);
 
-            List<SearchResult> results = aiCoreService.performDeepSearch(query); // Using your custom SearchResult class
+            List<SearchResult> results = aiSerachService.performDeepSearch(query); // Using your custom SearchResult class
 
             // Log the results
             System.out.println("Results: " + results);

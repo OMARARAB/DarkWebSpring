@@ -15,7 +15,11 @@ public class AhmiaController {
     private final AhmiaApiService ahmiaApiService;
 
     @PostMapping("/scrape")
-    public List<Map<String, Object>> search(@RequestBody Map<String, String> requestBody) {
+    public List<Map<String, Object>> search(@RequestBody Map<String, String> requestBody,
+                                            @RequestHeader Map<String, String> headers) {
+        System.out.println("🔹 Incoming request headers: " + headers);
+        System.out.println("🔹 Request body: " + requestBody);
+
         String query = requestBody.get("query");
         return ahmiaApiService.searchAhmia(query);
     }

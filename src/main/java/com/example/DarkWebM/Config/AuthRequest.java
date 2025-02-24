@@ -13,6 +13,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthRequest {
 
     private String email;
-    String password;
+    private String password;
 
 }

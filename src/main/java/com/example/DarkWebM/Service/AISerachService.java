@@ -10,11 +10,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class AICoreService {
+public class AISerachService {
 
     private final RestTemplate restTemplate;
 
-    public AICoreService(RestTemplate restTemplate) {
+    public AISerachService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
@@ -26,7 +26,7 @@ public class AICoreService {
      */
     public List<SearchResult> performDeepSearch(String query) {
         // Flask API URL
-        String flaskApiUrl = "http://127.0.0.1:5000/ai/scrape"; // Replace with your Flask API URL
+        String flaskApiUrl = "http://127.0.0.1:5000/api/aisearch"; // Replace with your Flask API URL
 
         // Create the JSON request body with the 'query'
         String jsonBody = "{\"query\": \"" + query + "\"}";

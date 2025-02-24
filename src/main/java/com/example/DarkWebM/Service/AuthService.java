@@ -57,6 +57,7 @@ public class AuthService {
         return User.builder()
                 .username(registerRequest.getUsername())
                 .email(registerRequest.getEmail())
+                .phone(registerRequest.getPhone())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
                 .role(Role.USER) // Ensure role is always set
                 .build();

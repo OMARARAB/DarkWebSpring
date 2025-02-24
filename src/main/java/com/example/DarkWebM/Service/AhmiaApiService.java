@@ -24,7 +24,7 @@ public class AhmiaApiService {
      */
     public List<Map<String, Object>> searchAhmia(String query) {
         // Flask API URL
-        String flaskApiUrl = "https://remaining-publishing-denial-spoke.trycloudflare.com/ahmia/scrape";
+        String flaskApiUrl = "http://127.0.0.1:5001/api/search";
 
         // Create the JSON request body
         String jsonBody = "{\"query\": \"" + query + "\"}";

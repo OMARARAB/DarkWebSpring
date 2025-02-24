@@ -38,6 +38,7 @@ public class UserService {
             // Update user fields with new values
             user.setUsername(updatedUser.getUsername());
             user.setEmail(updatedUser.getEmail());
+            user.setPhone(updatedUser.getPhone());
             user.setPassword(updatedUser.getPassword());
             user.setRole(updatedUser.getRole());
             return userRepository.save(user); // Save and return the updated user
