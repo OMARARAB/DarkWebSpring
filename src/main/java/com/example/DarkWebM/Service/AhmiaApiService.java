@@ -24,7 +24,7 @@ public class AhmiaApiService {
      */
     public List<Map<String, Object>> searchAhmia(String query) {
         // Flask API URL
-        String flaskApiUrl = "http://127.0.0.1:5001/api/search";
+        String flaskApiUrl = "https://i-guard-vercel-sul8.vercel.app/api/search";
 
         // Create the JSON request body
         String jsonBody = "{\"query\": \"" + query + "\"}";

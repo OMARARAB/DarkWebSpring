@@ -43,6 +43,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING) // Indicates that the enum will be stored as a string in the database
     private Role role; // Role of the user, represented as an enum
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<SavedOutput> savedOutputs;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();

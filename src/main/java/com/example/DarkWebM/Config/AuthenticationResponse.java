@@ -11,5 +11,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthenticationResponse {
 
+    private Long id; // ✅ Include user ID
     private String accessToken;
 }

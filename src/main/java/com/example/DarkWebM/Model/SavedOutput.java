@@ -1,20 +1,36 @@
 package com.example.DarkWebM.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Entity // Marks this class as a JPA entity
-@Table(name = "saved") // Specifies the table name in the database
-@Data // Lombok annotation to automatically generate getters, setters, and other utility methods
-@AllArgsConstructor // Lombok annotation to generate a constructor with all fields
-@NoArgsConstructor // Lombok annotation to generate a no-argument constructor
+@Entity
+@Table(name = "saved_outputs")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Saved {
+public class SavedOutput {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private
+
+    @Column(nullable = false, name = "title")
+    private String title;
+
+    @Column(nullable = false, name = "category")
+    private String category;
+
+    @Column(nullable = false, name = "link")
+    private String link;
+
+    @Column(nullable = false, name = "description", columnDefinition = "TEXT")
+    private String description;
+
+    @Column(nullable = false, name = "onion_address")
+    private String onionAddress;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user; // Relationship to User
 }

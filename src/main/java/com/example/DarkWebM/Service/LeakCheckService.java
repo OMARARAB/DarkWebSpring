@@ -14,7 +14,7 @@ public class LeakCheckService {
 
     private final RestTemplate restTemplate;
     private final UserRepository userRepository;
-    private static final String FLASK_API_URL = "http://127.0.0.1:5002/api/checkleak";
+    private static final String FLASK_API_URL = "https://scan-yours-iguard-vercel.vercel.app/api/checkleak";
 
     public LeakCheckService(RestTemplate restTemplate, UserRepository userRepository) {
         this.restTemplate = restTemplate;
