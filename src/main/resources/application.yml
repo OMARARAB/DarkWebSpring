@@ -1,8 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/DarkWeb  # Use 'db' as hostname for Docker
-    username: postgres
-    password: password
+    url: ${DATABASE_URL}  # Use the environment variable provided by Fly.io
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,6 +15,8 @@ spring:
 
 server:
   port: 8080
+  address: 0.0.0.0  # Ensure app listens on all interfaces
+
 
 application:
   security:
