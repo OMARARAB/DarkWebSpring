@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: ${DATABASE_URL}?sslmode=require  # This will automatically be provided by Fly.io
+    url: ${DATABASE_URL}?sslmode=disable  # This will automatically be provided by Fly.io
     driver-class-name: org.postgresql.Driver
 
   jpa:
