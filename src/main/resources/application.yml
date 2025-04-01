@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/DarkWeb  # Use 'db' as hostname for Docker
+    url: jdbc:postgresql://db:5432/DarkWeb  # ✅ Changed to service name "db"
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
@@ -8,12 +8,12 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update   # Change to 'validate' or 'none' in production
+      ddl-auto: update
     show-sql: true
 
   sql:
     init:
-      mode: always  # Change to 'never' if you don't want to initialize scripts
+      mode: always
 
 server:
   address: 0.0.0.0
@@ -22,10 +22,10 @@ server:
 application:
   security:
     jwt:
-      secret-key: c2VjcmV0S2V5MjAyNS0xMjMtYXNkZjEyMzEyMyE=  # Example Base64 key
-      expiration: 86400000  # 1 day in milliseconds
+      secret-key: c2VjcmV0S2V5MjAyNS0xMjMtYXNkZjEyMzEyMyE=
+      expiration: 86400000
       refresh-token:
-        expiration: 604800000  # 7 days in milliseconds
+        expiration: 604800000
 
 logging:
   level:
