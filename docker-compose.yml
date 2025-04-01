@@ -16,7 +16,7 @@ services:
 
   db:
     image: postgres:15
-    container_name: postgres-db
+    container_name: postgres-sql
     restart: always
     environment:
       POSTGRES_DB: DarkWeb
