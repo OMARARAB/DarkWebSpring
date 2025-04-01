@@ -1,12 +1,14 @@
 spring:
   datasource:
-    url: ${DATABASE_URL}?sslmode=require  # This will automatically be provided by Fly.io
+    url: jdbc:postgresql://db:5432/DarkWeb  # Use 'db' as hostname for Docker
+    username: postgres
+    password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update  # Change to 'validate' or 'none' in production
+      ddl-auto: update   # Change to 'validate' or 'none' in production
     show-sql: true
 
   sql:
@@ -20,7 +22,7 @@ server:
 application:
   security:
     jwt:
-      secret-key: c2VjcmV0S2V5MjAyNS0xMjMtYXNkZjEyMzEyMyE=  # Base64 encoded secret key
+      secret-key: c2VjcmV0S2V5MjAyNS0xMjMtYXNkZjEyMzEyMyE=  # Example Base64 key
       expiration: 86400000  # 1 day in milliseconds
       refresh-token:
         expiration: 604800000  # 7 days in milliseconds
