@@ -1,14 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/DarkWeb  # Use 'db' as hostname for Docker
-    username: postgres
-    password: password
+    url: ${DATABASE_URL}  # Fly.io will set this automatically
+    username: ${POSTGRES_USER}  # Fly.io will set this automatically
+    password: ${POSTGRES_PASSWORD}  # Fly.io will set this automatically
     driver-class-name: org.postgresql.Driver
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update   # Change to 'validate' or 'none' in production
+      ddl-auto: update  # Change to 'validate' or 'none' in production
     show-sql: true
 
   sql:
