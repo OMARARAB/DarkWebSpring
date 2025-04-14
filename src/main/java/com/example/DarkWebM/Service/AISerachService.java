@@ -26,7 +26,7 @@ public class AISerachService {
      */
     public List<SearchResult> performDeepSearch(String query) {
         // Flask API URL
-        String flaskApiUrl = "http://127.0.0.1:5000/api/aisearch"; // Replace with your Flask API URL
+        String flaskApiUrl = "https://ai-iguard-js.vercel.app/api/aisearch"; // Replace with your Flask API URL
 
         // Create the JSON request body with the 'query'
         String jsonBody = "{\"query\": \"" + query + "\"}";
