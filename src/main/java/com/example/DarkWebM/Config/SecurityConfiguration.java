@@ -26,7 +26,8 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/leaks/**").authenticated()
                         .requestMatchers("/api/ai/**").authenticated()
-                        .requestMatchers("/api/ahmia/**").authenticated()
+                        .requestMatchers("/api/v1/**").authenticated()
+                        .requestMatchers("/api/admin/").authenticated()
                         .anyRequest().authenticated()                   // Secure all other endpoints
                 )
                 .sessionManagement(session -> session

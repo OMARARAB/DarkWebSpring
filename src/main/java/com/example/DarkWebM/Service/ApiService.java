@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class AhmiaApiService {
+public class ApiService {
 
     private final RestTemplate restTemplate;
 
-    public AhmiaApiService(RestTemplate restTemplate) {
+    public ApiService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
@@ -22,9 +22,9 @@ public class AhmiaApiService {
      * @param query The search keyword to send.
      * @return The JSON response as a List of Maps.
      */
-    public List<Map<String, Object>> searchAhmia(String query) {
+    public List<Map<String, Object>> search(String query) {
         // Flask API URL
-        String flaskApiUrl = "https://i-guard-vercel-sul8.vercel.app/api/search";
+        String flaskApiUrl = "https://scan.app/api/";
 
         // Create the JSON request body
         String jsonBody = "{\"query\": \"" + query + "\"}";

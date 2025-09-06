@@ -27,7 +27,7 @@ public class SavedOutput {
     @Column(nullable = false, name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(nullable = false, name = "onion_address")
+    @Column(nullable = false, name = "onion_address")////////////////////////////////////////////////////////
     private String onionAddress;
 
     @ManyToOne

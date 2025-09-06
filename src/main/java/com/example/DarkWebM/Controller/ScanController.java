@@ -1,6 +1,6 @@
 package com.example.DarkWebM.Controller;
 
-import com.example.DarkWebM.Service.AhmiaApiService;
+import com.example.DarkWebM.Service.ApiService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +9,10 @@ import java.util.Map;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/ahmia")
-public class AhmiaController {
+@RequestMapping("/api/v1")
+public class ScanController {
 
-    private final AhmiaApiService ahmiaApiService;
+    private final ApiService apiService;
 
     @PostMapping("/scrape")
     public List<Map<String, Object>> search(@RequestBody Map<String, String> requestBody,
@@ -21,7 +21,7 @@ public class AhmiaController {
         System.out.println("🔹 Request body: " + requestBody);
 
         String query = requestBody.get("query");
-        return ahmiaApiService.searchAhmia(query);
+        return apiService.search(query);
     }
 
 }

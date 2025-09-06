@@ -26,7 +26,7 @@ public class AISerachService {
      */
     public List<SearchResult> performDeepSearch(String query) {
         // Flask API URL
-        String flaskApiUrl = "https://ai-iguard-js.vercel.app/api/aisearch"; // Replace with your Flask API URL
+        String flaskApiUrl = "https://-ai.app/api/";
 
         // Create the JSON request body with the 'query'
         String jsonBody = "{\"query\": \"" + query + "\"}";
@@ -60,7 +60,6 @@ public class AISerachService {
                     result.setTitle((String) resultMap.get("title"));
                     result.setLink((String) resultMap.get("link"));
                     result.setDescription((String) resultMap.get("description"));
-                    result.setOnionAddress((String) resultMap.get("onion_address"));
                     return result;
                 }).collect(Collectors.toList());
             } else {

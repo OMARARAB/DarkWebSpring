@@ -13,6 +13,6 @@ public class SearchResult {
     private String title;
     private String link;
     private String description;
-    private String onionAddress;
+    private String onionAddress;/////////////////////////////////////////////
 
 }
